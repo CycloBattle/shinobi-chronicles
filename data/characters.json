@@ -1,0 +1,37 @@
+[
+  {
+    "id": "kakashi", "prenom": "Kakashi", "nom": "Hatake", "age": 31, "clan": "Hatake",
+    "village": "Konoha", "role": "Jōnin, instructeur", "relation": 15, "rencontre": true,
+    "description": "Le « Ninja Copieur », détenteur du Sharingan. Nonchalant en apparence, il protège farouchement ses élèves et valorise le travail d'équipe avant tout."
+  },
+  {
+    "id": "tsunade", "prenom": "Tsunade", "nom": "Senju", "age": 50, "clan": "Senju",
+    "village": "Konoha", "role": "Godaime Hokage", "relation": 10, "rencontre": true,
+    "description": "Légendaire ninja médecin et Cinquième Hokage. Fière, impulsive et redoutable, elle attend des résultats et sait récompenser la loyauté."
+  },
+  {
+    "id": "haruto", "prenom": "Haruto", "nom": "Hyūga", "age": 16, "clan": "Hyūga",
+    "village": "Konoha", "role": "Genin rival", "relation": -35, "rencontre": true,
+    "description": "Prodige du Byakugan, froid et arrogant. Il voit en toi un rival et un obstacle, mais respecte secrètement ceux qui lui tiennent tête."
+  },
+  {
+    "id": "daimyo", "prenom": "Hōshin", "nom": "Daimyō", "age": 62, "clan": "Aucun (noblesse)",
+    "village": "Cour du Pays du Feu", "role": "Daimyō du Pays du Feu", "relation": 0, "rencontre": false,
+    "description": "Souverain du Pays du Feu et commanditaire des missions de Konoha. Pieux, prudent et influent, il redoute les intrigues de l'ombre."
+  },
+  {
+    "id": "ryoga", "prenom": "Ryōga", "nom": "Hozuki", "age": 27, "clan": "Hozuki",
+    "village": "Kirigakure (déserteur)", "role": "Nukenin de rang A", "relation": -20, "rencontre": false,
+    "description": "Ancien épéiste de Kiri qui a fui après un massacre politique. Imprévisible et rieur, il ne tue que pour survivre… ou par défi."
+  },
+  {
+    "id": "deidara", "prenom": "Deidara", "nom": "—", "age": 19, "clan": "Aucun",
+    "village": "Iwagakure (déserteur)", "role": "Membre de l'Akatsuki", "relation": -60, "rencontre": false,
+    "description": "Artiste explosif pour qui « l'art est un éclat ». Dangereux, théâtral et obsédé par la destruction spectaculaire."
+  },
+  {
+    "id": "gaara", "prenom": "Gaara", "nom": "du Désert", "age": 18, "clan": "Kazekage",
+    "village": "Sunagakure", "role": "Kazekage", "relation": 5, "rencontre": false,
+    "description": "Jeune Kazekage au passé tourmenté, devenu un dirigeant protecteur. Réservé mais d'une loyauté absolue envers ceux qu'il estime."
+  }
+]

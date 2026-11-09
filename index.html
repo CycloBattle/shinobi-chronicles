@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shinobi Chronicles – JDR Solo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1><span class="logo">忍</span> Shinobi Chronicles</h1>
+    <div class="topbar-right">
+      <span id="tour-indicator">Tour 1</span>
+      <button id="btn-reset" class="btn-ghost" title="Effacer la sauvegarde">⟲ Nouvelle partie</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- PANNEAU GAUCHE : CARTE -->
+    <section class="map-panel">
+      <div class="map-wrap" id="map-wrap">
+        <img id="map-img" src="assets/naruto-map.jpg" alt="Carte du monde de Naruto" draggable="false">
+        <div id="markers"></div>
+        <div id="pion" title="Votre position"></div>
+      </div>
+      <div class="coords">
+        <div class="coord-pos">📍 <strong id="coord-lieu">—</strong>
+          <small>(X <span id="coord-xv">0</span>% · Y <span id="coord-yv">0</span>%)</small></div>
+        <div class="coord-form">
+          <label>X <input type="number" id="coord-x" min="0" max="100" step="0.1"></label>
+          <label>Y <input type="number" id="coord-y" min="0" max="100" step="0.1"></label>
+          <button id="coord-go" class="btn">Se déplacer</button>
+        </div>
+        <p class="hint">Clique sur la carte ou sur un lieu pour te déplacer. Chaque trajet consomme du chakra.</p>
+      </div>
+    </section>
+
+    <!-- PANNEAU DROIT : ONGLETS -->
+    <aside class="side-panel">
+      <nav class="tabs" role="tablist">
+        <button class="tab active" role="tab" data-tab="fiche">👤 Fiche</button>
+        <button class="tab" role="tab" data-tab="inventaire">🎒 Inventaire</button>
+        <button class="tab" role="tab" data-tab="quetes">📜 Quêtes</button>
+        <button class="tab" role="tab" data-tab="pnj">🧑‍🤝‍🧑 PNJ</button>
+        <button class="tab" role="tab" data-tab="mj">🎴 Maître du Jeu</button>
+      </nav>
+
+      <section id="tab-fiche" class="tab-panel active" role="tabpanel"></section>
+      <section id="tab-inventaire" class="tab-panel" role="tabpanel"></section>
+      <section id="tab-quetes" class="tab-panel" role="tabpanel"></section>
+      <section id="tab-pnj" class="tab-panel" role="tabpanel"></section>
+
+      <section id="tab-mj" class="tab-panel mj" role="tabpanel">
+        <div id="mj-log" class="mj-log" aria-live="polite"></div>
+        <div id="mj-choix" class="mj-choix"></div>
+        <form id="mj-form" class="mj-form" autocomplete="off">
+          <input id="mj-input" type="text" maxlength="200" placeholder="Ou décris une action libre (ex : « je m'entraîne », « je me repose »)…">
+          <button class="btn" type="submit">Agir</button>
+        </form>
+      </section>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="ai.js"></script>
+</body>
+</html>
