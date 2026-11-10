@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shinobi Chronicles – JDR textuel Naruto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1><span class="logo">忍</span> Shinobi Chronicles</h1>
+    <div id="canon-indicator" class="canon-indicator"></div>
+    <div class="topbar-right">
+      <span id="tour-indicator">Tour 1</span>
+      <button id="btn-ia" class="btn-ghost">⚙️ IA</button>
+      <button id="btn-reset" class="btn-ghost" title="Effacer la partie et créer un nouveau personnage">⟲ Nouvelle partie</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- PANNEAU GAUCHE : TRACKER DE CARTE -->
+    <section class="map-panel">
+      <div class="map-wrap" id="map-wrap">
+        <img id="map-img" src="assets/naruto-map.jpg" alt="Carte du monde de Naruto" draggable="false">
+        <div id="markers"></div>
+        <div id="pion" title="Position actuelle"></div>
+      </div>
+      <div class="tracker">
+        <div class="tracker-pos">📍 <strong id="coord-lieu">—</strong> <span id="coord-detail"></span></div>
+        <p class="hint">Le pion suit automatiquement ta position dans l’histoire.</p>
+      </div>
+    </section>
+
+    <!-- PANNEAU DROIT : ONGLETS -->
+    <aside class="side-panel">
+      <nav class="tabs" role="tablist">
+        <button class="tab" role="tab" data-tab="fiche">👤 Fiche</button>
+        <button class="tab" role="tab" data-tab="inventaire">🎒 Inventaire</button>
+        <button class="tab" role="tab" data-tab="pnj">🧑‍🤝‍🧑 Relations</button>
+        <button class="tab" role="tab" data-tab="journal">📰 Journal</button>
+        <button class="tab active" role="tab" data-tab="mj">🎴 Maître du Jeu</button>
+      </nav>
+
+      <section id="tab-fiche" class="tab-panel" role="tabpanel"></section>
+      <section id="tab-inventaire" class="tab-panel" role="tabpanel"></section>
+      <section id="tab-pnj" class="tab-panel" role="tabpanel"></section>
+      <section id="tab-journal" class="tab-panel" role="tabpanel"></section>
+
+      <section id="tab-mj" class="tab-panel mj active" role="tabpanel">
+        <div id="mj-log" class="mj-log" aria-live="polite"></div>
+        <div id="mj-choix" class="mj-choix"></div>
+        <form id="mj-form" class="mj-form" autocomplete="off">
+          <textarea id="mj-input" rows="2" maxlength="600" placeholder="Que fais-tu ? Décris une action, une parole, une pensée… (Entrée pour envoyer, Maj+Entrée pour aller à la ligne)"></textarea>
+          <div class="mj-form-btns">
+            <button class="btn" type="submit">Agir</button>
+            <button class="btn-ghost" type="button" id="btn-undo" title="Annuler le dernier tour">↩</button>
+          </div>
+        </form>
+      </section>
+    </aside>
+  </main>
+
+  <!-- CRÉATION DE PERSONNAGE -->
+  <div id="creation" class="overlay" hidden>
+    <form id="form-perso" class="creation">
+      <h2>忍 Crée ton personnage</h2>
+      <p class="hint">Tout ce que tu écris ici guidera l’histoire. Plus tu es précis, plus le Maître du Jeu pourra t’immerger.</p>
+
+      <fieldset>
+        <legend>Identité</legend>
+        <div class="grid2">
+          <label>Prénom *<input name="prenom" required maxlength="30"></label>
+          <label>Nom de famille<input name="nom" maxlength="30" placeholder="Laisse vide si tu n’en as pas"></label>
+          <label>Âge *<input name="age" type="number" min="6" max="60" value="12" required></label>
+          <label>Genre
+            <select name="sexe"><option>Féminin</option><option>Masculin</option><option>Autre / non précisé</option></select></label>
+          <label>Clan<input name="clan" list="dl-clans" maxlength="40" placeholder="Aucun, Hyūga, Nara…"></label>
+          <label>Village<input name="village" list="dl-villages" maxlength="40" value="Konohagakure"></label>
+        </div>
+        <datalist id="dl-clans"><option value="Aucun"><option value="Hyūga"><option value="Uchiha"><option value="Uzumaki"><option value="Nara"><option value="Yamanaka"><option value="Akimichi"><option value="Inuzuka"><option value="Aburame"><option value="Senju"><option value="Sarutobi"><option value="Hatake"><option value="Yuki"><option value="Kaguya"><option value="Hozuki"></datalist>
+        <datalist id="dl-villages"><option value="Konohagakure"><option value="Sunagakure"><option value="Kirigakure"><option value="Iwagakure"><option value="Kumogakure"></datalist>
+      </fieldset>
+
+      <fieldset>
+        <legend>Point de départ dans l’histoire</legend>
+        <label>Où commences-tu ?<select name="depart" id="depart"></select></label>
+        <p class="hint" id="depart-desc"></p>
+        <label>Ta place dans la classe / ton entourage
+          <textarea name="entourage" rows="2" maxlength="300" placeholder="Ex : je suis assis derrière Shikamaru, je suis ami avec Hinata, je me dispute souvent avec Kiba…"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Apparence</legend>
+        <label>Description physique *<textarea name="apparence" rows="3" maxlength="500" required placeholder="Taille, silhouette, cheveux, yeux, tenue habituelle…"></textarea></label>
+        <label>Particularités physiques<textarea name="particularites" rows="2" maxlength="300" placeholder="Cicatrice, marque de naissance, couleur d’yeux inhabituelle, handicap…"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Personnalité et passé</legend>
+        <label>Personnalité et rêve<textarea name="personnalite" rows="2" maxlength="400" placeholder="Caractère, défauts, ce que tu veux devenir…"></textarea></label>
+        <label>Background connu<textarea name="background" rows="3" maxlength="800" placeholder="Ta famille, ton enfance, ce que ton personnage sait de son passé…"></textarea></label>
+        <label class="secret">🔒 Background caché
+          <textarea name="secret" rows="3" maxlength="800" placeholder="Ce que ton personnage ignore lui-même (origine, héritage, lien avec un PNJ, pouvoir dormant…). Le Maître du Jeu s’en servira pour guider l’histoire en distillant des indices."></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Compétences de départ <span id="alloc-reste" class="badge"></span></legend>
+        <div id="alloc"></div>
+        <p class="hint">Répartis 100 points entre les quatre arts shinobi.</p>
+      </fieldset>
+
+      <button class="btn btn-big" type="submit">Commencer l’aventure</button>
+    </form>
+  </div>
+
+  <!-- RÉGLAGES IA -->
+  <dialog id="dlg-ia">
+    <form method="dialog" class="ia-form">
+      <h3>⚙️ Maître du Jeu IA (Gemini)</h3>
+      <label>Mode
+        <select id="ia-mode">
+          <option value="direct">Ma clé API (stockée dans ce navigateur)</option>
+          <option value="proxy">Proxy Cloudflare (clé cachée côté serveur)</option>
+        </select></label>
+      <label id="ia-l-key">Clé API Gemini <input type="password" id="ia-key" placeholder="AIza…" autocomplete="off"></label>
+      <label id="ia-l-proxy">URL du proxy <input type="url" id="ia-proxy" placeholder="https://mon-worker.mon-compte.workers.dev"></label>
+      <label>Modèle <input type="text" id="ia-model" placeholder="gemini-3.8-flash"></label>
+      <label>Modèle de secours (facultatif, utilisé si le principal est surchargé) <input type="text" id="ia-fallback" placeholder="ex : gemini-3.5-flash-lite"></label>
+      <p class="hint">La clé reste dans le localStorage de ce navigateur et n’est envoyée qu’à Google. Ne la publie jamais dans le dépôt.</p>
+      <div class="ia-actions">
+        <button type="button" class="btn-ghost" id="ia-cancel">Annuler</button>
+        <button type="button" class="btn-ghost" id="ia-clear">Supprimer ma clé</button>
+        <button type="button" class="btn" id="ia-save">Enregistrer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
