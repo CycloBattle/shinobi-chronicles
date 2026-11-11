@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shinobi Chronicles – JDR textuel Naruto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1><span class="logo">忍</span> Shinobi Chronicles</h1>
+    <div id="canon-indicator" class="canon-indicator"></div>
+    <div class="topbar-right">
+      <span id="tour-indicator">Tour 1</span>
+      <button id="btn-ia" class="btn-ghost">⚙️ IA</button>
+      <button id="btn-reset" class="btn-ghost" title="Effacer la partie et créer un nouveau personnage">⟲ Nouvelle partie</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- PANNEAU GAUCHE : TRACKER DE CARTE (zoomable) -->
+    <section class="map-panel">
+      <div class="map-wrap" id="map-wrap">
+        <div class="map-inner" id="map-inner">
+          <img id="map-img" src="assets/naruto-map.jpg" alt="Carte du monde de Naruto" draggable="false">
+          <div id="markers"></div>
+          <div id="pion" title="Position actuelle"></div>
+        </div>
+        <div class="map-tools">
+          <button type="button" id="zoom-in" title="Zoomer">＋</button>
+          <button type="button" id="zoom-out" title="Dézoomer">－</button>
+          <button type="button" id="zoom-pion" title="Centrer sur mon personnage">🎯</button>
+          <button type="button" id="zoom-reset" title="Vue d’ensemble">⟲</button>
+        </div>
+      </div>
+      <div class="tracker">
+        <div class="tracker-pos">📍 <strong id="coord-lieu">—</strong> <span id="coord-detail"></span></div>
+        <p class="hint">Le pion suit automatiquement ta position dans l’histoire. Molette ou boutons pour zoomer, glisse pour déplacer la carte, double-clic pour zoomer.</p>
+      </div>
+    </section>
+
+    <!-- PANNEAU DROIT : ONGLETS -->
+    <aside class="side-panel">
+      <nav class="tabs" role="tablist">
+        <button class="tab" role="tab" data-tab="fiche">👤 Fiche</button>
+        <button class="tab" role="tab" data-tab="pnj">🧑‍🤝‍🧑 Relations</button>
+        <button class="tab" role="tab" data-tab="journal">📰 Journal</button>
+        <button class="tab" role="tab" data-tab="fil">🧭 Fil</button>
+        <button class="tab active" role="tab" data-tab="mj">🎴 Maître du Jeu</button>
+      </nav>
+
+      <section id="tab-fiche" class="tab-panel" role="tabpanel"></section>
+      <section id="tab-pnj" class="tab-panel" role="tabpanel"></section>
+      <section id="tab-journal" class="tab-panel" role="tabpanel"></section>
+      <section id="tab-fil" class="tab-panel" role="tabpanel"></section>
+
+      <section id="tab-mj" class="tab-panel mj active" role="tabpanel">
+        <div id="mj-log" class="mj-log" aria-live="polite"></div>
+        <div id="mj-choix" class="mj-choix"></div>
+        <form id="mj-form" class="mj-form" autocomplete="off">
+          <textarea id="mj-input" rows="2" maxlength="600" placeholder="Que fais-tu ? Décris une action, une parole, une pensée… (Entrée pour envoyer, Maj+Entrée pour aller à la ligne)"></textarea>
+          <div class="mj-form-btns">
+            <button class="btn" type="submit">Agir</button>
+            <button class="btn-ghost" type="button" id="btn-undo" title="Annuler le dernier tour">↩</button>
+          </div>
+        </form>
+      </section>
+    </aside>
+  </main>
+
+  <!-- sélecteur de fichier partagé pour les photos -->
+  <input type="file" id="photo-pick" accept="image/*" hidden>
+
+  <!-- CRÉATION DE PERSONNAGE -->
+  <div id="creation" class="overlay" hidden>
+    <form id="form-perso" class="creation">
+      <h2>忍 Crée ton personnage</h2>
+      <p class="hint">Tout ce que tu écris ici guidera l’histoire. Plus tu es précis, plus le Maître du Jeu pourra t’immerger.</p>
+
+      <fieldset>
+        <legend>Identité</legend>
+        <div class="photo-field">
+          <img id="photo-prev" class="avatar portrait" alt="Aperçu de la photo" hidden>
+          <div class="photo-actions">
+            <label class="fichier">Photo de ton personnage (facultatif)
+              <input type="file" id="photo-input" accept="image/*"></label>
+            <button type="button" class="btn-ghost" id="photo-retirer">Retirer la photo</button>
+          </div>
+        </div>
+        <div class="grid2">
+          <label>Prénom *<input name="prenom" required maxlength="30"></label>
+          <label>Nom de famille<input name="nom" maxlength="30" placeholder="Laisse vide si tu n’en as pas"></label>
+          <label>Âge *<input name="age" type="number" min="6" max="60" value="12" required></label>
+          <label>Genre
+            <select name="sexe"><option>Féminin</option><option>Masculin</option><option>Autre / non précisé</option></select></label>
+          <label>Clan<input name="clan" list="dl-clans" maxlength="40" placeholder="Aucun, Hyūga, Nara…"></label>
+          <label>Village<input name="village" list="dl-villages" maxlength="40" value="Konohagakure"></label>
+        </div>
+        <datalist id="dl-clans"><option value="Aucun"><option value="Hyūga"><option value="Uchiha"><option value="Uzumaki"><option value="Nara"><option value="Yamanaka"><option value="Akimichi"><option value="Inuzuka"><option value="Aburame"><option value="Senju"><option value="Sarutobi"><option value="Hatake"><option value="Yuki"><option value="Kaguya"><option value="Hozuki"></datalist>
+        <datalist id="dl-villages"><option value="Konohagakure"><option value="Sunagakure"><option value="Kirigakure"><option value="Iwagakure"><option value="Kumogakure"></datalist>
+      </fieldset>
+
+      <fieldset>
+        <legend>Point de départ dans l’histoire</legend>
+        <label>Où commences-tu ?<select name="depart" id="depart"></select></label>
+        <p class="hint" id="depart-desc"></p>
+        <label>Ta place dans la classe / ton entourage
+          <textarea name="entourage" rows="2" maxlength="300" placeholder="Ex : je suis assis derrière Shikamaru, je suis ami avec Hinata, je me dispute souvent avec Kiba…"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Apparence</legend>
+        <label>Description physique *<textarea name="apparence" rows="3" maxlength="500" required placeholder="Taille, silhouette, cheveux, yeux, tenue habituelle…"></textarea></label>
+        <label>Particularités physiques<textarea name="particularites" rows="2" maxlength="300" placeholder="Cicatrice, marque de naissance, couleur d’yeux inhabituelle, handicap…"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Personnalité et passé</legend>
+        <label>Personnalité et rêve<textarea name="personnalite" rows="2" maxlength="400" placeholder="Caractère, défauts, talents, ce que tu veux devenir…"></textarea></label>
+        <label>Background connu<textarea name="background" rows="3" maxlength="800" placeholder="Ta famille, ton enfance, ce que ton personnage sait de son passé…"></textarea></label>
+        <label class="secret">🔒 Background caché
+          <textarea name="secret" rows="3" maxlength="800" placeholder="Ce que ton personnage ignore lui-même (origine, héritage, lien avec un PNJ, pouvoir dormant…). Le Maître du Jeu s’en servira pour guider l’histoire en distillant des indices."></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>🧭 Fil conducteur (facultatif)</legend>
+        <p class="hint">Indique à quels moments de la série tu veux qu’il arrive quelque chose à ton personnage. Exemple : « Pendant le mois d’entraînement, quand Naruto rencontre Jiraiya pour la première fois → mon personnage rencontre Tsunade ». Tu pourras le modifier plus tard dans l’onglet 🧭 Fil.</p>
+        <div id="fil-creation"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Niveau de départ (automatique)</legend>
+        <div id="apercu"></div>
+        <p class="hint">Calculé d’après ton âge, ton clan, ton point de départ et ta description, pour rester au niveau des autres élèves. Tu progresseras ensuite au fil de l’histoire.</p>
+      </fieldset>
+
+      <button class="btn btn-big" type="submit">Commencer l’aventure</button>
+    </form>
+  </div>
+
+  <!-- RÉGLAGES IA -->
+  <dialog id="dlg-ia">
+    <form method="dialog" class="ia-form">
+      <h3>⚙️ Maître du Jeu IA (Gemini)</h3>
+      <label>Mode
+        <select id="ia-mode">
+          <option value="direct">Ma clé API (stockée dans ce navigateur)</option>
+          <option value="proxy">Proxy Cloudflare (clé cachée côté serveur)</option>
+          <option value="manuel">Mode copier-coller (sans clé, avec l’appli Gemini)</option>
+        </select></label>
+      <label id="ia-l-key">Clé API Gemini <input type="password" id="ia-key" placeholder="AIza… ou AQ…" autocomplete="off"></label>
+      <label id="ia-l-proxy">URL du proxy <input type="url" id="ia-proxy" placeholder="https://mon-worker.mon-compte.workers.dev"></label>
+      <label id="ia-l-model">Modèle <input type="text" id="ia-model" placeholder="gemini-3.8-flash"></label>
+      <label id="ia-l-fallback">Modèle de secours (facultatif, utilisé si le principal est surchargé) <input type="text" id="ia-fallback" placeholder="ex : gemini-3.5-flash-lite"></label>
+      <p class="hint" id="ia-info-manuel" style="display:none">Aucune clé ni connexion : à chaque tour, le jeu te donne un texte à coller dans gemini.google.com, puis tu colles la réponse ici.</p>
+      <p class="hint">La clé reste dans le localStorage de ce navigateur et n’est envoyée qu’à Google. Ne la publie jamais dans le dépôt.</p>
+      <div class="ia-actions">
+        <button type="button" class="btn-ghost" id="ia-cancel">Annuler</button>
+        <button type="button" class="btn-ghost" id="ia-clear">Supprimer ma clé</button>
+        <button type="button" class="btn" id="ia-save">Enregistrer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- MODE COPIER-COLLER -->
+  <dialog id="dlg-manuel">
+    <div class="man-box">
+      <h3>📋 Mode copier-coller</h3>
+      <p class="hint"><b>1.</b> Copie ce texte. <b>2.</b> Colle-le dans <a href="https://gemini.google.com/app" target="_blank" rel="noopener">gemini.google.com</a> (garde la même conversation). <b>3.</b> Copie la réponse de Gemini et colle-la plus bas.</p>
+      <textarea id="man-prompt" readonly rows="7"></textarea>
+      <div class="man-row">
+        <button type="button" class="btn" id="man-copier">📋 Copier le prompt</button>
+        <label class="man-check"><input type="checkbox" id="man-complet"> Nouvelle conversation Gemini (prompt complet)</label>
+      </div>
+      <textarea id="man-reponse" rows="7" placeholder="Colle ici la réponse complète de Gemini (le bloc JSON)…"></textarea>
+      <p id="man-erreur" class="man-erreur"></p>
+      <div class="ia-actions">
+        <button type="button" class="btn-ghost" id="man-annuler">Annuler</button>
+        <button type="button" class="btn" id="man-valider">Valider la réponse</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
