@@ -1,0 +1,641 @@
+{
+ "debuts": [
+  {
+   "id": "d_academie",
+   "titre": "Élève de l’Académie – dans la classe de Naruto et Sasuke",
+   "canon": "e00",
+   "lieu": "konoha",
+   "lieu_detail": "Académie de Konoha – cour d’entraînement",
+   "rang": "Élève de l’Académie",
+   "kit": "eleve",
+   "pv": 80,
+   "chakra": 50,
+   "description": "Tu es élève dans la même promotion que Naruto, Sasuke, Sakura, Shikamaru, Hinata… L’histoire commence quelques jours avant l’examen de diplôme, dans la vie quotidienne de la classe, puis arrive l’examen : le tout début de la série.",
+   "niveau": 10,
+   "age_ref": 12
+  },
+  {
+   "id": "d_equipes",
+   "titre": "Jeune Genin – répartition des équipes",
+   "canon": "e02",
+   "lieu": "konoha",
+   "lieu_detail": "Académie de Konoha",
+   "rang": "Genin",
+   "kit": "genin",
+   "pv": 100,
+   "chakra": 60,
+   "description": "Tu viens d’obtenir ton bandeau. Iruka s’apprête à annoncer les équipes de trois.",
+   "niveau": 14,
+   "age_ref": 12
+  },
+  {
+   "id": "d_vagues",
+   "titre": "Genin – mission au Pays des Vagues",
+   "canon": "e05",
+   "lieu": "nami",
+   "lieu_detail": "Route vers le pont de Tazuna",
+   "rang": "Genin",
+   "kit": "genin",
+   "pv": 100,
+   "chakra": 60,
+   "description": "Tu accompagnes (ou croises) l’Équipe 7 lors de la mission d’escorte de Tazuna. Zabuza est sur le point de frapper.",
+   "niveau": 17,
+   "age_ref": 12
+  },
+  {
+   "id": "d_chunin",
+   "titre": "Genin – début des examens Chūnin",
+   "canon": "e07",
+   "lieu": "konoha",
+   "lieu_detail": "Académie – salle d’inscription",
+   "rang": "Genin",
+   "kit": "genin",
+   "pv": 110,
+   "chakra": 70,
+   "description": "Ton équipe est inscrite à l’examen Chūnin. Des ninjas du monde entier convergent vers Konoha.",
+   "niveau": 21,
+   "age_ref": 12
+  },
+  {
+   "id": "d_apres",
+   "titre": "Après l’invasion de Konoha",
+   "canon": "e13",
+   "lieu": "konoha",
+   "lieu_detail": "Village en deuil",
+   "rang": "Genin / Chūnin",
+   "kit": "genin",
+   "pv": 110,
+   "chakra": 70,
+   "description": "Le Troisième Hokage est mort. Le village panse ses plaies et cherche un successeur.",
+   "niveau": 26,
+   "age_ref": 13
+  },
+  {
+   "id": "d_shippuden",
+   "titre": "Shippuden – retour de Naruto",
+   "canon": "e18",
+   "lieu": "konoha",
+   "lieu_detail": "Portes de Konoha",
+   "rang": "Chūnin",
+   "kit": "chunin",
+   "pv": 130,
+   "chakra": 100,
+   "description": "Deux ans et demi ont passé. Sasuke a quitté le village, Naruto revient de son entraînement. L’Akatsuki s’agite.",
+   "niveau": 38,
+   "age_ref": 15
+  }
+ ],
+ "evenements": [
+  {
+   "id": "e00",
+   "arc": "Académie",
+   "titre": "Les derniers jours avant l’examen",
+   "lieu": "konoha",
+   "pnj": [
+    "iruka",
+    "mizuki",
+    "naruto",
+    "sasuke",
+    "sakura",
+    "ino",
+    "shikamaru",
+    "choji",
+    "kiba",
+    "hinata",
+    "shino"
+   ],
+   "resume": "Quelques jours avant l’examen de diplôme. Vie quotidienne à l’Académie de Konoha : cours d’Iruka, lancers de shuriken, combats d’entraînement, déjeuners dans la cour, rumeurs sur l’épreuve du Bunshin no Jutsu. Les camarades vivent leur quotidien : Naruto enchaîne les farces et rate sans cesse le Bunshin, Sasuke s’entraîne seul et attire l’admiration, Sakura et Ino se disputent son attention, Shikamaru dort, Chōji grignote, Kiba chahute avec Akamaru, Hinata observe Naruto de loin, Shino reste en retrait. Mizuki seconde Iruka. C’est le moment de poser le personnage, de nouer des liens et de se mesurer à des camarades de son niveau. Joue 4 à 8 tours de vie quotidienne (cours, entraînement, conversations, petits incidents) AVANT d’arriver à l’examen."
+  },
+  {
+   "id": "e01",
+   "arc": "Académie",
+   "titre": "L’examen de diplôme",
+   "lieu": "konoha",
+   "pnj": [
+    "iruka",
+    "naruto",
+    "sasuke",
+    "sakura",
+    "mizuki"
+   ],
+   "resume": "Dernier jour à l’Académie. Iruka fait passer l’épreuve du Bunshin no Jutsu. Naruto, cancre et farceur rejeté par le village, échoue encore. Le soir, Mizuki lui souffle une fausse « épreuve de rattrapage » : voler le Rouleau Interdit. Iruka retrouve Naruto, qui a appris le Kage Bunshin. Mizuki attaque, Iruka protège Naruto de son corps, puis Naruto bat Mizuki avec ses clones. Iruka lui remet son bandeau. Ambiance de classe : Sasuke solitaire et adulé, Sakura et Ino rivales, Shikamaru qui dort, Kiba et Akamaru qui chahutent."
+  },
+  {
+   "id": "e02",
+   "arc": "Académie",
+   "titre": "La répartition des équipes",
+   "lieu": "konoha",
+   "pnj": [
+    "iruka",
+    "naruto",
+    "sasuke",
+    "sakura",
+    "kakashi",
+    "shikamaru",
+    "ino",
+    "choji",
+    "kiba",
+    "hinata",
+    "shino",
+    "asuma",
+    "kurenai"
+   ],
+   "resume": "Iruka annonce les équipes de trois : Équipe 7 (Naruto, Sasuke, Sakura, sensei Kakashi), Équipe 8 (Kiba, Hinata, Shino, sensei Kurenai), Équipe 10 (Shikamaru, Ino, Chōji, sensei Asuma). Déjeuner, attente interminable, Kakashi arrive en retard sur le toit et fait présenter chacun. Le joueur doit être intégré de façon cohérente (équipe supplémentaire avec un jōnin disponible, ou rattachement discret) sans casser le canon."
+  },
+  {
+   "id": "e03",
+   "arc": "Équipe 7",
+   "titre": "Le test des clochettes",
+   "lieu": "konoha",
+   "pnj": [
+    "kakashi",
+    "naruto",
+    "sasuke",
+    "sakura"
+   ],
+   "resume": "Kakashi les convoque au terrain d’entraînement : deux clochettes pour trois élèves, jusqu’à midi. Naruto fonce et finit ligoté à un poteau, Sasuke et Sakura échouent seuls. Kakashi interdit à Naruto de manger ; Sasuke et Sakura partagent leur repas malgré l’interdit. C’était le vrai test : le travail d’équipe. L’équipe est validée."
+  },
+  {
+   "id": "e04",
+   "arc": "Équipe 7",
+   "titre": "Missions de rang D",
+   "lieu": "konoha",
+   "pnj": [
+    "kakashi",
+    "naruto",
+    "sasuke",
+    "sakura",
+    "hiruzen",
+    "tazuna"
+   ],
+   "resume": "Corvées de genin : désherbage, courses, capture du chat Tora. Naruto en a assez et réclame une vraie mission. Hiruzen explique le système de rangs, puis confie une mission de rang C : escorter le constructeur de ponts Tazuna jusqu’au Pays des Vagues."
+  },
+  {
+   "id": "e05",
+   "arc": "Pays des Vagues",
+   "titre": "Zabuza, le Démon de la Brume",
+   "lieu": "nami",
+   "pnj": [
+    "zabuza",
+    "haku",
+    "kakashi",
+    "tazuna",
+    "naruto",
+    "sasuke",
+    "sakura"
+   ],
+   "resume": "En chemin, les frères Demon attaquent. Tazuna avoue qu’il a menti sur le rang de la mission : le magnat Gatō veut l’empêcher d’achever son pont. Zabuza Momochi surgit, Kakashi dévoile son Sharingan mais est piégé dans la prison d’eau. Naruto rassemble l’équipe pour le libérer. Kakashi terrasse presque Zabuza, mais un ninja masqué (Haku) l’emporte."
+  },
+  {
+   "id": "e06",
+   "arc": "Pays des Vagues",
+   "titre": "Haku et le Grand Pont",
+   "lieu": "nami",
+   "pnj": [
+    "haku",
+    "zabuza",
+    "tazuna",
+    "kakashi",
+    "naruto",
+    "sasuke",
+    "sakura"
+   ],
+   "resume": "Kakashi, épuisé, est alité. Entraînement à la marche sur les arbres. Naruto croise Haku dans la forêt sans savoir qui il est. Inari, petit-fils de Tazuna, a perdu foi en l’héroïsme. Au pont, le Miroir de Glace de Haku piège Naruto et Sasuke ; Sasuke éveille son Sharingan. Haku meurt pour protéger Zabuza, qui se retourne contre Gatō et meurt à son tour. Le pont est baptisé Grand Pont Naruto."
+  },
+  {
+   "id": "e07",
+   "arc": "Examens Chūnin",
+   "titre": "Inscriptions et épreuve écrite",
+   "lieu": "konoha",
+   "pnj": [
+    "kakashi",
+    "naruto",
+    "sasuke",
+    "sakura",
+    "lee",
+    "gaara",
+    "temari",
+    "kankuro",
+    "ibiki",
+    "kabuto",
+    "shikamaru",
+    "ino",
+    "choji",
+    "hinata",
+    "kiba",
+    "shino",
+    "neji",
+    "tenten",
+    "gai",
+    "anko"
+   ],
+   "resume": "Kakashi inscrit l’Équipe 7 sans le leur dire. Rock Lee défie Sasuke ; Gaara et les ninjas du Sable inquiètent ; Kabuto distribue des conseils. Ibiki fait passer l’examen écrit : tricher sans se faire prendre, puis la dixième question piège. Naruto prononce son discours et tous les candidats restants passent. Anko Mitarashi fait une entrée fracassante."
+  },
+  {
+   "id": "e08",
+   "arc": "Examens Chūnin",
+   "titre": "La Forêt de la Mort",
+   "lieu": "foret",
+   "pnj": [
+    "anko",
+    "naruto",
+    "sasuke",
+    "sakura",
+    "orochimaru",
+    "kabuto",
+    "lee",
+    "gaara",
+    "neji",
+    "tenten",
+    "hinata",
+    "kiba",
+    "shino",
+    "ino",
+    "shikamaru",
+    "choji"
+   ],
+   "resume": "Cinq jours pour récupérer un rouleau du Ciel et un de la Terre. Orochimaru, déguisé, attaque l’Équipe 7 et mord Sasuke (Sceau maudit). Sakura se coupe les cheveux pour protéger ses coéquipiers ; Lee la secourt ; l’équipe du Son (Dosu, Zaku, Kin) frappe ; Naruto laisse affleurer le chakra de Kyūbi. Arrivée à la tour, Kakashi scelle la marque de Sasuke."
+  },
+  {
+   "id": "e09",
+   "arc": "Examens Chūnin",
+   "titre": "Les préliminaires",
+   "lieu": "konoha",
+   "pnj": [
+    "anko",
+    "hiruzen",
+    "naruto",
+    "sasuke",
+    "sakura",
+    "ino",
+    "kiba",
+    "hinata",
+    "neji",
+    "gaara",
+    "lee",
+    "shikamaru",
+    "shino",
+    "kankuro",
+    "temari",
+    "tenten",
+    "choji",
+    "kabuto"
+   ],
+   "resume": "Trop de qualifiés : combats éliminatoires un à un devant les sensei. Sasuke bat Yoroi, Naruto bat Kiba par ruse, Neji humilie Hinata, Gaara écrase Lee, Sakura et Ino s’égalent, Shikamaru l’emporte grâce à son intelligence, etc. Le joueur peut se retrouver dans le tableau selon son niveau."
+  },
+  {
+   "id": "e10",
+   "arc": "Examens Chūnin",
+   "titre": "Un mois d’entraînement",
+   "lieu": "konoha",
+   "pnj": [
+    "kakashi",
+    "sasuke",
+    "naruto",
+    "jiraiya",
+    "gai",
+    "lee",
+    "shikamaru",
+    "hinata",
+    "kiba",
+    "temari"
+   ],
+   "resume": "Un mois avant le tournoi. Kakashi enseigne le Chidori à Sasuke ; Naruto, confié d’abord à Ebisu puis à Jiraiya, apprend à invoquer le crapaud Gamabunta ; Gai et Lee s’entraînent, Shikamaru et les autres se préparent. Temps idéal pour faire progresser le joueur et créer des liens."
+  },
+  {
+   "id": "e11",
+   "arc": "Examens Chūnin",
+   "titre": "Le tournoi final",
+   "lieu": "konoha",
+   "pnj": [
+    "naruto",
+    "neji",
+    "hinata",
+    "sasuke",
+    "gaara",
+    "shikamaru",
+    "temari",
+    "kankuro",
+    "kakashi",
+    "hiruzen",
+    "orochimaru"
+   ],
+   "resume": "Au stade, devant les seigneurs et le public. Naruto bat Neji et lui prouve que le destin se change ; Shikamaru abandonne face à Temari ; Sasuke arrive en retard pour affronter Gaara. Un genjutsu de plumes endort le public : l’invasion de Konoha commence."
+  },
+  {
+   "id": "e12",
+   "arc": "Invasion de Konoha",
+   "titre": "L’écrasement de Konoha",
+   "lieu": "konoha",
+   "pnj": [
+    "hiruzen",
+    "orochimaru",
+    "gaara",
+    "naruto",
+    "sasuke",
+    "sakura",
+    "kakashi",
+    "jiraiya",
+    "kankuro",
+    "temari",
+    "shikamaru",
+    "gai",
+    "lee"
+   ],
+   "resume": "Sable et Son attaquent le village. Orochimaru enferme Hiruzen dans une barrière, invoque le Premier et le Deuxième Hokage ; Hiruzen scelle les bras d’Orochimaru au prix de sa vie. Sasuke poursuit Gaara en forêt ; Naruto, Sakura et Shikamaru le soutiennent. Gaara, devenu Shukaku, est vaincu par Naruto et Gamabunta ; il comprend sa solitude."
+  },
+  {
+   "id": "e13",
+   "arc": "Après l’invasion",
+   "titre": "Funérailles et choix d’un successeur",
+   "lieu": "konoha",
+   "pnj": [
+    "jiraiya",
+    "naruto",
+    "kakashi",
+    "danzo",
+    "konohamaru",
+    "iruka"
+   ],
+   "resume": "Funérailles de Hiruzen. Konoha a besoin d’un Cinquième Hokage. Jiraiya annonce qu’il va chercher Tsunade, l’une des trois Sannin, et emmène Naruto. Danzō lorgne le poste."
+  },
+  {
+   "id": "e14",
+   "arc": "Après l’invasion",
+   "titre": "À la recherche de Tsunade",
+   "lieu": "kusa",
+   "pnj": [
+    "jiraiya",
+    "naruto",
+    "tsunade",
+    "shizune",
+    "orochimaru",
+    "kabuto"
+   ],
+   "resume": "Jiraiya et Naruto retrouvent Tsunade, joueuse endettée escortée de Shizune. Naruto apprend le Rasengan en une semaine. Orochimaru et Kabuto proposent à Tsunade de guérir les bras d’Orochimaru contre la résurrection de ses proches ; elle refuse et combat. Naruto lui rappelle son rêve ; Tsunade accepte de devenir Hokage."
+  },
+  {
+   "id": "e15",
+   "arc": "Retour de Sasuke",
+   "titre": "Itachi à Konoha",
+   "lieu": "konoha",
+   "pnj": [
+    "itachi",
+    "kisame",
+    "sasuke",
+    "kakashi",
+    "naruto",
+    "jiraiya",
+    "gai",
+    "tsunade"
+   ],
+   "resume": "Itachi et Kisame, de l’Akatsuki, entrent à Konoha pour capturer Naruto. Sasuke affronte Itachi et s’effondre sous le Tsukuyomi ; Kakashi, Gai et Jiraiya repoussent les deux ninjas. Tsunade soigne Sasuke et Kakashi. Sasuke, obsédé par la force, entend l’appel d’Orochimaru."
+  },
+  {
+   "id": "e16",
+   "arc": "Retour de Sasuke",
+   "titre": "La récupération de Sasuke",
+   "lieu": "oto",
+   "pnj": [
+    "sasuke",
+    "naruto",
+    "shikamaru",
+    "choji",
+    "kiba",
+    "neji",
+    "lee",
+    "gaara",
+    "temari",
+    "kankuro",
+    "sakura"
+   ],
+   "resume": "Sasuke déserte avec le Quatuor du Son. Shikamaru, tout juste Chūnin, dirige l’équipe de récupération (Naruto, Chōji, Kiba, Neji). Chacun reste combattre un membre du Quatuor ; Lee et les ninjas du Sable viennent aider. Naruto continue seul vers la Vallée de la Fin."
+  },
+  {
+   "id": "e17",
+   "arc": "Retour de Sasuke",
+   "titre": "La Vallée de la Fin",
+   "lieu": "vallee",
+   "pnj": [
+    "naruto",
+    "sasuke",
+    "kakashi"
+   ],
+   "resume": "Sur les statues de Hashirama et Madara, Naruto et Sasuke s’affrontent avec Rasengan et Chidori, Kyūbi et Sceau maudit. Sasuke l’emporte et quitte le village, laissant Naruto inconscient. Kakashi le ramène ; Naruto promet de ramener Sasuke. Fin de la Partie I."
+  },
+  {
+   "id": "e18",
+   "arc": "Shippuden",
+   "titre": "Le retour de Naruto",
+   "lieu": "konoha",
+   "pnj": [
+    "naruto",
+    "kakashi",
+    "sakura",
+    "tsunade",
+    "yamato",
+    "sai",
+    "konohamaru",
+    "shikamaru",
+    "iruka"
+   ],
+   "resume": "Deux ans et demi plus tard. Naruto revient de son voyage avec Jiraiya, retrouve ses amis et reçoit le test des clochettes de Kakashi. Sakura, élève de Tsunade, a gagné en force. Nouvelle Équipe Kakashi : Naruto, Sakura, Sai (remplaçant de Sasuke) et Yamato."
+  },
+  {
+   "id": "e19",
+   "arc": "Shippuden",
+   "titre": "Le sauvetage du Kazekage",
+   "lieu": "suna",
+   "pnj": [
+    "gaara",
+    "deidara",
+    "sasori",
+    "chiyo",
+    "kankuro",
+    "naruto",
+    "sakura",
+    "kakashi",
+    "temari",
+    "gai",
+    "lee"
+   ],
+   "resume": "Gaara, devenu Kazekage, est enlevé par Deidara et Sasori de l’Akatsuki. L’équipe de Kakashi se rend au Sable. Sakura et Chiyo affrontent Sasori, Naruto et Kakashi affrontent Deidara. Gaara meurt, Chiyo le ramène à la vie en sacrifiant la sienne."
+  },
+  {
+   "id": "e20",
+   "arc": "Shippuden",
+   "titre": "Orochimaru et la fin de l’Équipe 7",
+   "lieu": "oto",
+   "pnj": [
+    "naruto",
+    "sakura",
+    "sai",
+    "yamato",
+    "orochimaru",
+    "sasuke",
+    "kabuto",
+    "kakashi"
+   ],
+   "resume": "Mission de reconnaissance vers le pont Tenchi : l’équipe croise Kabuto, remonte vers le repaire d’Orochimaru, retrouve Sasuke. Sasuke élimine Orochimaru et forme sa propre équipe (Hebi / Taka) pour tuer Itachi."
+  },
+  {
+   "id": "e21",
+   "arc": "Shippuden",
+   "titre": "Hidan et Kakuzu",
+   "lieu": "konoha",
+   "pnj": [
+    "asuma",
+    "shikamaru",
+    "ino",
+    "choji",
+    "hidan",
+    "kakuzu",
+    "kakashi",
+    "naruto"
+   ],
+   "resume": "Hidan et Kakuzu de l’Akatsuki tuent Asuma. Shikamaru, Ino et Chōji jurent de le venger. Avec Kakashi et Naruto (Fūton : Rasen Shuriken), Kakuzu est vaincu ; Shikamaru enterre Hidan vivant."
+  },
+  {
+   "id": "e22",
+   "arc": "Shippuden",
+   "titre": "Sasuke contre Itachi",
+   "lieu": "oto",
+   "pnj": [
+    "sasuke",
+    "itachi",
+    "kisame",
+    "naruto",
+    "kakashi",
+    "tobi"
+   ],
+   "resume": "Sasuke affronte Itachi dans l’ancien repaire des Uchiha. Itachi meurt. Tobi révèle la vérité sur le massacre du clan Uchiha et sur le sacrifice d’Itachi : Sasuke jure de détruire Konoha."
+  },
+  {
+   "id": "e23",
+   "arc": "Shippuden",
+   "titre": "Jiraiya contre Pain",
+   "lieu": "ame",
+   "pnj": [
+    "jiraiya",
+    "pain",
+    "konan",
+    "nagato",
+    "naruto"
+   ],
+   "resume": "Jiraiya infiltre Amegakure pour enquêter sur le chef de l’Akatsuki, Pain, et sur ses six corps. Il tombe au combat en laissant un message codé qui aidera Naruto."
+  },
+  {
+   "id": "e24",
+   "arc": "Shippuden",
+   "titre": "L’invasion de Pain",
+   "lieu": "konoha",
+   "pnj": [
+    "pain",
+    "naruto",
+    "tsunade",
+    "kakashi",
+    "hinata",
+    "nagato",
+    "konan",
+    "konohamaru",
+    "shikamaru"
+   ],
+   "resume": "Naruto s’entraîne au mont Myōboku (Mode Sage). Pain fond sur Konoha en quête du Kyūbi et rase le village (Shinra Tensei). Naruto affronte Pain, Hinata intervient, Nagato ressuscite les victimes avec son Rinnegan. Le village reconnaît Naruto comme un héros."
+  },
+  {
+   "id": "e25",
+   "arc": "Shippuden",
+   "titre": "Le Sommet des cinq Kage",
+   "lieu": "tetsu",
+   "pnj": [
+    "tsunade",
+    "gaara",
+    "mei",
+    "onoki",
+    "raikage",
+    "sasuke",
+    "madara",
+    "killerbee",
+    "danzo",
+    "naruto"
+   ],
+   "resume": "Les cinq Kage se réunissent au Pays du Fer pour décider du sort de Naruto et de Killer B, cibles de l’Akatsuki. Sasuke s’introduit pour tuer Danzō. Madara apparaît et déclare la guerre au monde ninja."
+  },
+  {
+   "id": "e26",
+   "arc": "Shippuden",
+   "titre": "La chute de Danzō",
+   "lieu": "tetsu",
+   "pnj": [
+    "sasuke",
+    "danzo",
+    "madara",
+    "tobi"
+   ],
+   "resume": "Sasuke poursuit et affronte Danzō (Izanagi). Danzō meurt. La rancune de Sasuke se tourne vers Konoha tout entier ; il se range aux côtés de Madara."
+  },
+  {
+   "id": "e27",
+   "arc": "Quatrième Grande Guerre",
+   "titre": "L’Alliance shinobi",
+   "lieu": "tetsu",
+   "pnj": [
+    "naruto",
+    "killerbee",
+    "gaara",
+    "tsunade",
+    "kakashi",
+    "onoki",
+    "mei",
+    "raikage",
+    "kabuto",
+    "madara",
+    "tobi"
+   ],
+   "resume": "Les cinq pays forment l’Alliance shinobi. Naruto s’entraîne avec Killer B. Kabuto lance l’Edo Tensei et l’armée de Zetsu blancs entre en jeu. Le front se bat en divisions ; Naruto rejoint le champ de bataille."
+  },
+  {
+   "id": "e28",
+   "arc": "Quatrième Grande Guerre",
+   "titre": "Obito et Madara",
+   "lieu": "tetsu",
+   "pnj": [
+    "tobi",
+    "madara",
+    "naruto",
+    "kakashi",
+    "sasuke",
+    "sakura",
+    "minato"
+   ],
+   "resume": "Tobi se dévoile. Madara est ressuscité et réunit le Jūbi. L’Alliance lutte désespérément ; Naruto et Sasuke retrouvent l’Équipe 7 pour affronter Madara. Révélations sur le plan Œil de la Lune."
+  },
+  {
+   "id": "e29",
+   "arc": "Quatrième Grande Guerre",
+   "titre": "Le dernier combat",
+   "lieu": "vallee",
+   "pnj": [
+    "naruto",
+    "sasuke",
+    "sakura",
+    "kakashi"
+   ],
+   "resume": "Après la guerre, Naruto et Sasuke s’affrontent une dernière fois à la Vallée de la Fin. Ils se réconcilient. Sasuke part en voyage d’expiation."
+  },
+  {
+   "id": "e30",
+   "arc": "Épilogue",
+   "titre": "Naruto devient Hokage",
+   "lieu": "konoha",
+   "pnj": [
+    "naruto",
+    "sasuke",
+    "sakura",
+    "kakashi",
+    "shikamaru"
+   ],
+   "resume": "Kakashi devient Sixième Hokage ; plus tard, Naruto réalise son rêve et devient Septième Hokage. Histoire libre au-delà de la chronologie canonique."
+  }
+ ]
+}
